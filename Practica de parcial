@@ -1,0 +1,53 @@
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <unistd.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	
+	string a, e, p="plato del dia", r="recomendacion del chef", z="pizza napolitana";
+	int j=1;
+	
+	do{
+	cout<<"Si desea entrear a Cafe Sigma escriba ingresar"<<endl;
+	getline(cin,e);
+	
+	 if(e=="ingresar"){ 
+		cout<<"Bienvenido a Cafe Sigma. Su numero de mesa es la "<<j<<endl;
+		j++;
+		cout<<"Que desea ordenar? Tenemos el plato del dia, recomendacion del chef y pizza napolitana"<<endl;
+		getline(cin,a);
+		if(a==p){
+			cout<<"Muchas gracias tu pedido estara listo en ";
+			for(int i=180; i>0; --i){
+				cout<<i<<" segundos"<<endl;
+				sleep(1);
+			}
+			cout<<"Muchas gracias por su espera. Su pedido ha sido entregadado"<<endl;
+		}
+		else if (a==r){
+			cout<<"Muchas gracias tu pedido estara listo en ";
+				for(int i=300; i>0; --i){
+					cout<<i<<" segundos"<<endl;
+					sleep(1);
+			}	
+			cout<<"Muchas gracias por su espera. Su pedido ha sido entregadado"<<endl;	
+		}
+		else if (a==z){
+			cout<<"Muchas gracias tu pedido estara listo en ";
+				for(int i=120; i>0; --i){
+					cout<<i<<" segundos"<<endl;
+					sleep(1);
+			}
+			cout<<"Muchas gracias por su espera. Su pedido ha sido entregadado"<<endl;	
+}
+}
+	
+	else{
+		cout<<"Si cambia de opinion ya sabe donde encontrarnos que tenga un buen dia"<<endl;
+	}
+}while(e=="ingresar");
+}
