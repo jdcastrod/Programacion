@@ -1,0 +1,115 @@
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include<time.h>
+#include <ctime>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+int main(int argc, char** argv){
+    string m, t1, t2, t3, t4, t5, t6;
+    int tr, n;
+    char u[15]="";
+	char c[15]="";
+	char g[2]="";
+	
+/* Inicio parte de Diego Arredondo*/
+	  cout<<"Bienvenido al portal de tickets de la Universidad XYZ"<<endl;
+      cout<<"Escriba su Usuario ";
+      cin>>u;
+      
+       cout<<"Escriba su contrasena ";
+       cin>>c;
+       
+       if(u=="Estudiante1" && c=="Estudiante1_2015"){
+       cout<<"Bienvenido al sistema de tickets"<<endl;      
+       
+       
+       cout<<"Usted tiene una matricula activa"<<endl;
+       cin>>g;
+       
+       if(g=="si"){
+       	cout<<"Usted tiene una matricula activa"<<endl;
+	   
+   }
+	   else{
+	   	cout<<"Usted no tiene una matricula activa"<<endl;
+	   }
+/*fin parte de Diego Arredondo*/
+/*inicio parte Kevin Flores*/	   
+	   cout<<"Introduzca su nueva contrasena"<<endl;
+	   cin>>c;
+	   
+	   time_t now;
+
+	struct tm nowLocal;
+	now=time(NULL);
+	nowLocal=*localtime(&now);
+
+	std::cout<<"Dia que ingreso:"<<nowLocal.tm_mday<<" "<<nowLocal.tm_mon+1<<" "<<nowLocal.tm_year+1900<<std::endl;
+
+	std::cout<<"La hora que ingreso"<<nowLocal.tm_hour<<" "<<nowLocal.tm_min<<" "<<nowLocal.tm_sec<<std::endl;
+	
+/*fin parte de Kevin Flores*/
+/*Inicio parte de Juan David Castro*/
+    do{
+        cout<<"Que desea hacer. Presione 1 si quiere subir un ticket. Presione 2 si quiere ver sus tickets. Presione 3 para salir."<<endl;
+        getline(cin,m);
+
+        if(m=="1"){
+        cout<<"Ingrese su nombre"<<endl;
+        getline(cin,t1);
+
+        cout<<"Ingrese su apellido"<<endl;
+        getline(cin,t2);
+
+        cout<<"Ingrese su identificacion personal"<<endl;
+        getline(cin,t3);
+
+        cout<<"Ingrese su correo electronico"<<endl;
+        getline(cin,t4);
+
+        cout<<"Ingrese la carrera que estudia"<<endl;
+        getline(cin,t5);
+
+        cout<<"Ingrese el tickete que desea enviar"<<endl;
+        getline(cin,t6);
+
+        srand(time(0));
+         for(int i = 0; i<1; i++)
+             tr=rand();
+             cout<<tr<<endl;
+
+     }
+
+     else if(m=="2"){
+         cout<<"Ingrese su numero de tickete"<<endl;
+         cin>>n;
+         cin.ignore();
+
+
+         if(n == tr){
+             cout<<t1<<endl<<t2<<endl<<t3<<endl<<t4<<endl<<t5<<endl<<t6<<endl;
+         }
+         else{
+             cout<<"El codigo es invalido"<<endl;
+         }
+
+     }
+ 
+    else if(m=="3"){
+        cout<<"Muchas gracias por usar nuestro sistema. Que tenga un buen dia!"<<endl;
+    }
+
+ }while(m != "3");
+}
+/*fin parte de Juan David Castro*/
+ else{
+	   	cout<<"Usuario o contrasena incorrecta"<<endl;
+	   }
+
+}
